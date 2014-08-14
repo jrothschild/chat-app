@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>babylchat</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+        
+        <div class="container">
+              <i class="fa fa-comments fa-4x"></i>
+              <div id="text">babylchat</div>
+              
+
+              <div class="col-lg-6">
+                <div class="input-group">
+                  
+                  <%= form_tag('/display_url', method: :post) do %>
+                  <%= text_field_tag 'display', nil, placeholder: 'Enter a URL to Chat About Any Page on the Internet', class: "form-control" %>
+
+                    <%= submit_tag "Go!", class: "btn btn-default" %>
+                  <% end %>
+                  
+                </div><!-- /input-group -->
+                
+              </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+  </nav> 
+
+
+
+    <% flash.each do |name, message| %>     
+      <div class="alert alert-<%= name %>">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= message %>   
+      </div> 
+           
+    <% end %>
+
+
+
+<%= yield %>
+
+</body>
+</html>

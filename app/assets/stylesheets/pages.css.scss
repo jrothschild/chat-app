@@ -1,0 +1,98 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  height:100%;
+
+}
+
+#container,  {
+   min-height:100%;
+   position:relative;
+   
+}
+
+
+
+#text{
+  display: inline;
+  font-family: 'Proxima Nova',sans-serif;
+  font-size: 30px;
+  line-height: 50px;
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+#body-container, {
+  height: 600px;
+}
+
+#body-callout-text{
+  font-family: 'Proxima Nova',sans-serif;
+  font-size: 40px;
+  // font-style: italic;
+  text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+  color: #fff;
+  padding-top: 230px;
+  padding-right: 90px;
+  padding-bottom: 90px;
+  padding-left: 400px;
+}
+
+#header {
+   background:white;
+
+}
+
+.col-lg-6{
+  padding: 15px;
+  width: 10px;
+  float: right !important;
+  height: 20px;
+  display: inline;
+}
+
+.navbar{
+  margin-bottom: 0px !important;
+}
+
+#body {
+    background-image:url('../assets/Milky-Way.jpg');
+    background-size: auto 130%;
+        // background-repeat: no-repeat;
+        // background-position: left top;
+    padding:10px;
+    padding-bottom:200px;   /* Height of the footer */
+}
+
+
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:200px;   //Height of the footer
+   background:white;
+
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+iframe, .chat-frame{
+  border: 0;
+  width: 100%;
+  height: 50%;
+  position:absolute;
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+}
+
+#chatbox {
+  border: black solid 1px;
+  min-height: 100px;
+}
