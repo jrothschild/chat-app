@@ -1,19 +1,22 @@
 <h1> Chat Form </h1>
 
-<div id="chatbox">
+<div ng-app="app">
+  <div ng-controller="chatsCtrl"
+       ng-init="init('<%= @url %>')">
 
-</div>
+    {{ 1 + 1 }}
+    <div id="chatbox">
 
-<%= form_tag({controller: "comments", action: "create"}, method: "post") do %>
+    </div>
 
-  <%= hidden_field_tag :url, @url %>
-  <%= label_tag(:message, "Message") %>
-  <%= text_field_tag(:message) %>
-  <%= submit_tag("Chat") %>
-  
-<% end %>
+
+  <!-- <input type="hidden" name="url" ng-value="{{url}}"> -->
+  <input name="message" ng-model="message">
+  <a href="#" class="btn btn-primary" ng-click="chat(message, url)">Chat</a>
 
 <!-- <iframe class="chat-frame" src="<%= @url %>"></iframe> -->
+  </div>
+</div>
 
 <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
     <script type="text/javascript">
