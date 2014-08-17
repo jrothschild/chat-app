@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'pusher'
+gem 'quiet_assets'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

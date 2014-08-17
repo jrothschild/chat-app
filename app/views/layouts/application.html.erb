@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>babylchat</title>
+  <title><%= @title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,16 +14,16 @@
         
         <div class="container">
               <i class="fa fa-comments fa-4x"></i>
-              <div id="text">babylchat</div>
+              <div id="text"><%= @title %></div>
               
 
               <div class="col-lg-6">
                 <div class="input-group">
                   
+                  
                   <%= form_tag('/display_url', method: :post) do %>
                   <%= text_field_tag 'display', nil, placeholder: 'Enter a URL to Chat About Any Page on the Internet', class: "form-control" %>
-
-                    <%= submit_tag "Go!", class: "btn btn-default" %>
+                  <%= submit_tag "Go!",  class: "btn btn-group btn-default" %>
                   <% end %>
                   
                 </div><!-- /input-group -->

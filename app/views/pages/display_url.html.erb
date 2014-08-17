@@ -1,20 +1,42 @@
-<h1> Chat Form </h1>
-
 <div ng-app="app">
-  <div ng-controller="chatsCtrl"
-       ng-init="init('<%= @url %>')">
+  <div ng-controller="chatsCtrl" ng-init="init('<%= @url %>')">
 
-    {{ 1 + 1 }}
-    <div id="chatbox">
 
+
+<!-- Chomment Modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Chomments</button>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          </div>
+
+          <div id="chatbox">
+
+            <% @comment.each do |text| %>
+              <ul>
+                <li>
+                  <%= text.user.email %>: <%= text.body %>    
+                </li>
+              </ul>
+            <% end %>
+
+ <input name="message" ng-model="message">
+  <a href="#" class="btn btn-primary" ng-click="chat(message, url)">Submit</a>
+
+          </div>
+        </div>
+      </div>
     </div>
 
+<!-- End Chomment Modal -->
 
-  <!-- <input type="hidden" name="url" ng-value="{{url}}"> -->
-  <input name="message" ng-model="message">
-  <a href="#" class="btn btn-primary" ng-click="chat(message, url)">Chat</a>
+ 
 
-<!-- <iframe class="chat-frame" src="<%= @url %>"></iframe> -->
+<iframe class="chat-frame" src="<%= @url %>"></iframe>
+
   </div>
 </div>
 
@@ -31,7 +53,7 @@
       var channel = pusher.subscribe('<%= @url.gsub("http://", "") %>');
       channel.bind('my_event', function(data) {
         console.log(data.message);
-        $("#chatbox").append(data.message + "\r");
+        $("#chatbox").append(data.message + "\n");
       });
     </script>
   </script>
