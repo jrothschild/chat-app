@@ -86,12 +86,14 @@ ul li
 iframe, .chat-frame{
   border: 0;
   width: 100%;
-  height: 80%;
+  height: 90%;
   position:absolute;
   left: 0; 
   right: 0; 
   bottom: 0;
+
 }
+
 
 // #chatbox {
 //   border: black solid 1px;
@@ -100,4 +102,12 @@ iframe, .chat-frame{
 
 .modal-header {
   border-bottom: none;
+}
+
+.modal-content {
+  min-height: 200px;
+}
+
+#top-url-bar {
+  display: block;
 }

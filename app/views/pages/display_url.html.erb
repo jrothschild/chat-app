@@ -1,11 +1,8 @@
 <div ng-app="app">
   <div ng-controller="chatsCtrl" ng-init="init('<%= @url %>')">
 
-
-
+              
 <!-- Chomment Modal -->
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Chomments</button>
-
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -15,27 +12,26 @@
 
           <div id="chatbox">
 
-            <% @comment.each do |text| %>
+            <% @comments.each do |comment| %>
               <ul>
                 <li>
-                  <%= text.user.email %>: <%= text.body %>    
+                  <%= comment.user.email %>: <%= comment.body %>    
                 </li>
               </ul>
             <% end %>
+          </div>
 
  <input name="message" ng-model="message">
   <a href="#" class="btn btn-primary" ng-click="chat(message, url)">Submit</a>
 
-          </div>
+          
         </div>
       </div>
     </div>
 
 <!-- End Chomment Modal -->
 
- 
-
-<iframe class="chat-frame" src="<%= @url %>"></iframe>
+<iframe class="chat-frame"  src="http://<%= @url %>"></iframe>
 
   </div>
 </div>
@@ -56,4 +52,8 @@
         $("#chatbox").append(data.message + "\n");
       });
     </script>
-  </script>
+
+    <script>
+
+</script>
+ 

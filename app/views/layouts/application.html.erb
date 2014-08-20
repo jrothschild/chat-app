@@ -12,25 +12,31 @@
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
         
-        <div class="container">
-              <i class="fa fa-comments fa-4x"></i>
-              <div id="text"><%= @title %></div>
-              
+    <div class="container">
+      <i class="fa fa-comments fa-4x"></i>
+        <div id="text">
+          <%= link_to @title, "/" %>
+        </div>
 
-              <div class="col-lg-6">
-                <div class="input-group">
-                  
+      <% if @comments %>
+        <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Chomments</button>
+      <% end %>
+
+
+        <div class="col-lg-6">
+          <div class="input-group">
                   
                   <%= form_tag('/display_url', method: :post) do %>
                   <%= text_field_tag 'display', nil, placeholder: 'Enter a URL to Chat About Any Page on the Internet', class: "form-control" %>
-                  <%= submit_tag "Go!",  class: "btn btn-group btn-default" %>
+                  <div class="input-group-btn" id="top-url-bar">
+                    <%= submit_tag "Go!",  class: "btn btn-group btn-default" %>
+                  </div>
                   <% end %>
                   
-                </div><!-- /input-group -->
-                
-              </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-  </nav> 
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+</nav> 
 
 
 
