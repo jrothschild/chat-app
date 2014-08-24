@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 # # Pages Controller
   get '/' => 'pages#index'
   get '/index' => 'pages#index'
+  get '/test' => 'pages#test'
+  get '/iframe' => 'pages#iframe'
 
 #   # URL Display Page
   post '/display_url' => 'pages#display_url'

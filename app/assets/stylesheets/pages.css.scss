@@ -35,10 +35,17 @@ body {
   // font-style: italic;
   text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
   color: #fff;
-  padding-top: 230px;
-  padding-right: 90px;
-  padding-bottom: 90px;
-  padding-left: 400px;
+
+  padding-top: 5%;
+  // padding-right: 50%;
+  // padding-bottom: 50%;
+  padding-left: 30%;
+
+
+  // padding-top: 230px;
+  // padding-right: 90px;
+  // padding-bottom: 90px;
+  // padding-left: 400px;
 }
 
 #header {
@@ -54,12 +61,25 @@ body {
   display: inline;
 }
 
-.navbar{
+/* navbar */
+
+.navbar-default {
+    background-color: #2c3e50;
+    border-color: #E7E7E7;
+}
+
+.navbar .nav > li > a  {
   margin-bottom: 0px !important;
+  color: #FFFFFF !important;
+}
+
+.navbar-text {
+  color: #FFFFFF !important;
 }
 
 #body {
-    background-image:url('../assets/Milky-Way.jpg');
+    // background-image:url('../assets/Milky-Way.jpg');
+    background-color: #18bc9c;
     background-size: auto 130%;
         // background-repeat: no-repeat;
         // background-position: left top;
@@ -95,10 +115,20 @@ iframe, .chat-frame{
 }
 
 
-// #chatbox {
-//   border: black solid 1px;
-//   min-height: 100px;
-// }
+#chatbox {
+  // border: black solid 1px;
+  min-height: 100px;
+}
+
+#chat-message-box{
+  margin-left: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+a:visited {
+  color: white !important;
+}
 
 .modal-header {
   border-bottom: none;

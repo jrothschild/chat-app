@@ -1,0 +1,20 @@
+<iframe class="chat-frame" src="/iframe"></iframe>
+
+<!-- <span style="display: none;"><%= @domain %></span> -->
+
+<script>
+
+  $( document ).ready(function() {
+    alert("TEST");
+      $("a").click(function(e){
+        e.preventDefault();
+        var url = encodeURIComponent($(this).attr("href"));
+        $.get( "/test?route=" + url, function( data ) {
+          var iframe = $('#frame');
+            iframe.attr('src', url);
+          $("#iframe").html(data);
+        });
+      });
+      
+  });
+</script>

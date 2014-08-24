@@ -15,6 +15,10 @@
         console.log(error);
       });
     }
+
+    $http.get('http://cnn.com').then(function(response) {
+      $scope.testData = response.data;
+    });
     
   }); 
 })();

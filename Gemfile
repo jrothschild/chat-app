@@ -6,6 +6,7 @@ gem 'devise'
 gem 'dotenv-rails'
 gem 'pusher'
 gem 'quiet_assets'
+gem 'unirest'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

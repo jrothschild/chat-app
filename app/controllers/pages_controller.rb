@@ -11,5 +11,16 @@ class PagesController < ApplicationController
     @comments = Comment.where(:url => @url)
   end
 
+  def iframe
+    @url = params[:route] || "http://www.cnn.com"
+    puts "TARGET"
+    puts @url
+    @page = Unirest.get(@url).body
+    render layout: false
+  end
+
+  def test
+    
+  end
 
 end
