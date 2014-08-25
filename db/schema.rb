@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814174029) do
+ActiveRecord::Schema.define(version: 20140824193647) do
 
   create_table "chats", force: true do |t|
     t.integer "user"
@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 20140814174029) do
   end
 
   create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.text     "url"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
-    t.text     "url"
   end
 
   create_table "urls", force: true do |t|
@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(version: 20140814174029) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

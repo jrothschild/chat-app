@@ -15,15 +15,22 @@
                 <% @comments.each do |comment| %>
                   <ul>
                     <li>
-                      <%= comment.user.email %>: <%= comment.body %>    
+                      <%= comment.user.username %>: <%= comment.body %>    
                     </li>
                   </ul>
                 <% end %>
+              
+              <div id="chatbox-submit">
+                <% if user_signed_in?  %>
+                  <input name="message" id="chat-message-box" ng-model="message">
+                  <a href="#" class="btn btn-primary btn-xs" ng-click="chat(message, url)">Submit</a>
+                <% else %>
+                  <%= link_to('Register', new_user_registration_path)  %> or 
+                  <%= link_to('Sign In', new_user_session_path)  %> to Chomment
+                <% end %>
               </div>
 
-           <input name="message" id="chat-message-box" ng-model="message">
-            <a href="#" class="btn btn-primary btn-xs" ng-click="chat(message, url)">Submit</a>
-          
+            </div>
         </div>
 
       </div>
