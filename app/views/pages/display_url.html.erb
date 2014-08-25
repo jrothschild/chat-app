@@ -13,11 +13,16 @@
             <div id="chatbox">
               <div id="comments-box">
                 <ul id="comments-list">
-                  <% @comments.each do |comment| %>
-                    <li>
-                      <%= comment.user.username %>: <%= comment.body %>    
-                    </li>
-                  <% end %>
+                    <% unless @comments.nil? %>
+                    <% @comments.each do |comment| %>
+                      <li>
+                        <%= comment.user.username %>: <%= comment.body %>    
+                      </li>
+                      <% end %>
+                    <% else %>
+                    nothing here
+                    <% end %>
+                    
                 </ul>
               </div>
               
@@ -63,8 +68,7 @@
     channel.bind('my_event', function(data) {
       $("#comments-list").append('<li>' + '<%= current_user.username %>' + ': ' + data.message + '</li>');
       $("#chat-message-box").val('');
-      console.log($("#comments-box").height());
-      $("#comments-box").animate({scrollTop: $("#comments-box").height()}, "fast");
+      $("#comments-box").scrollTop($("#comments-box")[0].scrollHeight);
     });
   </script>
 <% end %>
