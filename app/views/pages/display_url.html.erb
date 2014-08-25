@@ -37,7 +37,7 @@
       </div>
     </div>
 
-<div id="test-box">{{ testData }}</div>
+<!-- <div id="test-box">{{ testData }}</div> -->
 
 <!-- End Chomment Modal -->
 
@@ -48,21 +48,23 @@
 </div>
 
 <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-  // Enable pusher logging - don't include this in production
-  // Pusher.log = function(message) {
-  //   if (window.console && window.console.log) {
-  //     window.console.log(message);
-  //   }
-  // };
 
-  var pusher = new Pusher("<%= ENV['PUSHER_KEY'] %>");
-  var channel = pusher.subscribe('<%= @url.gsub("http://", "") %>');
-  channel.bind('my_event', function(data) {
-    $("#comments-list").append('<li>' + '<%= current_user.username %>' + ': ' + data.message + '</li>');
-    $("#chat-message-box").val('');
-    console.log($("#comments-box").height());
-    $("#comments-box").animate({scrollTop: $("#comments-box").height()}, "fast");
-  });
-</script>
+<% if user_signed_in?  %>
+  <script type="text/javascript">
+    // Enable pusher logging - don't include this in production
+    // Pusher.log = function(message) {
+    //   if (window.console && window.console.log) {
+    //     window.console.log(message);
+    //   }
+    // };
 
+    var pusher = new Pusher("<%= ENV['PUSHER_KEY'] %>");
+    var channel = pusher.subscribe('<%= @url.gsub("http://", "") %>');
+    channel.bind('my_event', function(data) {
+      $("#comments-list").append('<li>' + '<%= current_user.username %>' + ': ' + data.message + '</li>');
+      $("#chat-message-box").val('');
+      console.log($("#comments-box").height());
+      $("#comments-box").animate({scrollTop: $("#comments-box").height()}, "fast");
+    });
+  </script>
+<% end %>
