@@ -128,14 +128,25 @@ iframe, .chat-frame{
 }
 
 #chatbox-submit {
-  position:absolute; 
-  bottom:0;
 }
 
 #chat-message-box{
   margin-left: 20px;
-  margin-bottom: 30px;
   margin-top: 10px;
+  width: 500px;
+  height: 30px;
+}
+
+#submit-chat {
+  margin-left: 5px;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+#comments-box {
+  height: 250px;
+  border-bottom: 1px solid black;
+  overflow-y: auto;
 }
 
 a:visited {
@@ -147,9 +158,6 @@ a:visited {
 }
 
 .modal-content {
-  min-height: 200px;
-  max-height: 420px;
-  overflow-y: auto;
   position: relative;
 }
 

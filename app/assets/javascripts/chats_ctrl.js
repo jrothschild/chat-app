@@ -16,9 +16,11 @@
       });
     }
 
-    $http.get('http://cnn.com').then(function(response) {
-      $scope.testData = response.data;
-    });
+    $scope.pressKey = function(event) {
+      if (event.keyCode === 13) { //user hits Enter key
+        $scope.chat($scope.message, $scope.url);
+      }
+    }
     
   }); 
 })();
