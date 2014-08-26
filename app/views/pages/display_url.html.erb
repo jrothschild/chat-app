@@ -3,29 +3,30 @@
 
               
 <!-- Chomment Modal -->
+  
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
           </div>
-
-            <div id="chatbox">
-              <div id="comments-box">
-                <ul id="comments-list">
-                    <% unless @comments.nil? %>
-                    <% @comments.each do |comment| %>
-                      <li>
-                        <%= comment.user.username %>: <%= comment.body %>    
-                      </li>
+          
+              <div id="chatbox">
+                <div id="comments-box">
+                  <ul id="comments-list">
+                      <% unless @comments.nil? %>
+                          <% @comments.each do |comment| %>
+                            <li>
+                              <%= comment.user.username %>: <%= comment.body %>    
+                            </li>
+                          <% end %>
+                      <% else %>
+                        nothing here
                       <% end %>
-                    <% else %>
-                    nothing here
-                    <% end %>
-                    
-                </ul>
-              </div>
-              
+                      
+                  </ul>
+                </div>
+           
               <div id="chatbox-submit">
                 <% if user_signed_in?  %>
                   <textarea name="message" id="chat-message-box" ng-model="message" ng-keypress="pressKey($event)"></textarea>
@@ -42,12 +43,12 @@
       </div>
     </div>
 
+
 <!-- <div id="test-box">{{ testData }}</div> -->
 
 <!-- End Chomment Modal -->
 
 <iframe class="chat-frame"  src="http://<%= @url %>"></iframe>
-
 
   </div>
 </div>
@@ -72,3 +73,5 @@
     });
   </script>
 <% end %>
+
+

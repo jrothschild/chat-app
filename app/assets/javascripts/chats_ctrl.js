@@ -22,5 +22,8 @@
       }
     }
     
+    // alert("The referrer of this document is "+ document.referrer);
+
+
   }); 
 })();
