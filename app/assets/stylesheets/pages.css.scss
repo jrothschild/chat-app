@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap"; 
 
+$primary-color: #18bc9c;
+$chomment-background-color: #e3e3e3;
+$primary-font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+
+
 body {
   height:100%;
 
@@ -73,10 +78,17 @@ body {
   color: white !important;
 }
 
+#navbar-chomment-button {
+  font-family: $primary-font-family;
+  background-color: $primary-color;
+  text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+}
 
 #body {
     // background-image:url('../assets/Milky-Way.jpg');
-    background-color: #18bc9c;
+    background-color: $primary-color;
     background-size: auto 130%;
         // background-repeat: no-repeat;
         // background-position: left top;
@@ -134,9 +146,12 @@ iframe, .chat-frame{
 
 }
 
+#chomment-modal-content {
+  background-color: $chomment-background-color;
+}
 
 #chatbox {
-  // border: black solid 1px;
+  font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   min-height: 100px;
 }
 
@@ -144,26 +159,37 @@ iframe, .chat-frame{
 }
 
 #chat-message-box{
-  margin-left: 20px;
-  margin-top: 10px;
-  width: 500px;
+  margin-left: 22px;
+  margin-top: 17px;
+  width: 669px;
   height: 70px;
+  box-shadow: 6px 6px 8px #888888;
+  border: none;
 }
 
 #submit-chat {
   margin-left: 5px;
-  margin-bottom: 20px;
-  height: 30px;
+  margin-bottom: 16px;
+  height: 44px;
+  background-color: $primary-color;
+  position: relative;
+  bottom: 8px;
+  text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+  color: #fff;
 }
 
 #comments-box {
   height: 250px;
-  border-bottom: 1px solid black;
+  // border-bottom: 1px solid black;
   overflow-y: auto;
 }
 
 a:visited {
   // color: white !important;
+}
+
+.btn-primary {
+  border: none;
 }
 
 .modal-header {
@@ -208,60 +234,17 @@ vertical-align: top;
 text-align: left;
 }
 
-// SPEECH BUBBLE
-
-        // .bubble 
-        // {
-        // position: relative;
-        // // width: 405px;
-        // // height: 120px;
-        // padding: 0px;
-        // background: #FFFFFF;
-        // -webkit-border-radius: 10px;
-        // -moz-border-radius: 10px;
-        // border-radius: 10px;
-        // border: #7F7F7F solid 13px;
-        // }
-
-        // .bubble:after 
-        // {
-        //   content: '';
-        //   position: absolute;
-        //   border-style: solid;
-        //   border-width: 15px 15px 0;
-        //   border-color: #FFFFFF transparent;
-        //   display: block;
-        //   width: 0;
-        //   z-index: 1;
-        //   bottom: -15px;
-        //   left: 700px;
-        // }
-
-        // .bubble:before 
-        // {
-        //   content: '';
-        //   position: absolute;
-        //   border-style: solid;
-        //   border-width: 27px 27px 0;
-        //   border-color: #7F7F7F transparent;
-        //   display: block;
-        //   width: 0;
-        //   z-index: 0;
-        //   bottom: -40px;
-        //   left: 688px;
-        // }
-
-  .bubble 
+.bubble 
 {
   position: relative;
   // width: 290px;
   // height: 135px;
   // padding: 2px;
-  background: #FFFFFF;
+  background: $chomment-background-color;
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
   border-radius: 11px;
-  border: #E27E7E solid 14px;
+  border: $primary-color solid 14px;
 }
 
 .bubble:after 
@@ -270,7 +253,7 @@ text-align: left;
   position: absolute;
   border-style: solid;
   border-width: 47px 41px 0;
-  border-color: #FFFFFF transparent;
+  border-color: $chomment-background-color transparent;
   display: block;
   width: 0;
   z-index: 1;
@@ -284,7 +267,7 @@ text-align: left;
   position: absolute;
   border-style: solid;
   border-width: 54px 48px 0;
-  border-color: #E27E7E transparent;
+  border-color: $primary-color transparent;
   display: block;
   width: 0;
   z-index: 0;

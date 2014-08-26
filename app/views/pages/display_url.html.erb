@@ -6,7 +6,7 @@
   
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg bubble">
-        <div class="modal-content">
+        <div class="modal-content" id="chomment-modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
           </div>
@@ -20,7 +20,7 @@
                           <li><%= comment.user.username %>: <%= comment.body %></li>
                         <% end %>   
                       <% else %>   
-                      Be the first to Chomment on this page!
+                      <span id="be-the-first">Be the first to Chomment on this page!</span>
                     <% end %>                                            
                   </ul>
                 </div>
@@ -28,7 +28,7 @@
               <div id="chatbox-submit">
                 <% if user_signed_in?  %>
                   <textarea name="message" id="chat-message-box" ng-model="message" ng-keypress="pressKey($event)"></textarea>
-                  <a href="#" id="submit-chat" class="btn btn-primary btn-xs" ng-click="chat(message, url)">Submit</a>
+                  <a href="#" id="submit-chat" class="btn btn-primary btn-lg" ng-click="chat(message, url)">Chomment</a>
                 <% else %>
                   <%= link_to('Register', new_user_registration_path)  %> or 
                   <%= link_to('Sign In', new_user_session_path)  %> to Chomment
@@ -59,8 +59,8 @@
     var channel = pusher.subscribe('<%= @url.gsub("http://", "") %>');
     channel.bind('my_event', function(data) {
       $("#comments-list").append('<li>' + data.username + ': ' + data.message + '</li>');
-      // $("#chat-message-box").val('');
       $("#comments-box").scrollTop($("#comments-box")[0].scrollHeight);
+      $("#be-the-first").hide();
     });
   </script>
 <% end %>
