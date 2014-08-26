@@ -13,17 +13,15 @@
           
               <div id="chatbox">
                 <div id="comments-box">
-                  <ul id="comments-list">
-                      <% unless @comments.nil? %>
-                          <% @comments.each do |comment| %>
-                            <li>
-                              <%= comment.user.username %>: <%= comment.body %>    
-                            </li>
-                          <% end %>
-                      <% else %>
-                        nothing here
-                      <% end %>
-                      
+
+                  <ul id="comments-list">   
+                    <% unless @comments.blank? %>                       
+                        <% @comments.each do |comment| %>
+                          <li><%= comment.user.username %>: <%= comment.body %></li>
+                        <% end %>   
+                      <% else %>   
+                      There are currently no Chomments on this page. Add yours now!
+                    <% end %>                                            
                   </ul>
                 </div>
            

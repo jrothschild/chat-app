@@ -210,17 +210,58 @@ text-align: left;
 
 // SPEECH BUBBLE
 
-.bubble 
+        // .bubble 
+        // {
+        // position: relative;
+        // // width: 405px;
+        // // height: 120px;
+        // padding: 0px;
+        // background: #FFFFFF;
+        // -webkit-border-radius: 10px;
+        // -moz-border-radius: 10px;
+        // border-radius: 10px;
+        // border: #7F7F7F solid 13px;
+        // }
+
+        // .bubble:after 
+        // {
+        //   content: '';
+        //   position: absolute;
+        //   border-style: solid;
+        //   border-width: 15px 15px 0;
+        //   border-color: #FFFFFF transparent;
+        //   display: block;
+        //   width: 0;
+        //   z-index: 1;
+        //   bottom: -15px;
+        //   left: 700px;
+        // }
+
+        // .bubble:before 
+        // {
+        //   content: '';
+        //   position: absolute;
+        //   border-style: solid;
+        //   border-width: 27px 27px 0;
+        //   border-color: #7F7F7F transparent;
+        //   display: block;
+        //   width: 0;
+        //   z-index: 0;
+        //   bottom: -40px;
+        //   left: 688px;
+        // }
+
+  .bubble 
 {
-position: relative;
-// width: 405px;
-// height: 120px;
-padding: 0px;
-background: #FFFFFF;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-border: #7F7F7F solid 13px;
+  position: relative;
+  // width: 290px;
+  // height: 135px;
+  // padding: 2px;
+  background: #FFFFFF;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  border: #E27E7E solid 14px;
 }
 
 .bubble:after 
@@ -228,13 +269,13 @@ border: #7F7F7F solid 13px;
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 15px 15px 0;
+  border-width: 47px 41px 0;
   border-color: #FFFFFF transparent;
   display: block;
   width: 0;
   z-index: 1;
-  bottom: -15px;
-  left: 338px;
+  bottom: -47px;
+  left: 600px;
 }
 
 .bubble:before 
@@ -242,11 +283,11 @@ border: #7F7F7F solid 13px;
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 27px 27px 0;
-  border-color: #7F7F7F transparent;
+  border-width: 54px 48px 0;
+  border-color: #E27E7E transparent;
   display: block;
   width: 0;
   z-index: 0;
-  bottom: -40px;
-  left: 326px;
+  bottom: -62px;
+  left: 593px;
 }
