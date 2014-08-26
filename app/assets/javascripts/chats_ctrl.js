@@ -8,17 +8,21 @@
       }
 
     $scope.chat = function(message, url) {
-      $http.post('/comments', {'message' : message, 'url' : $scope.item.url}).then(function(response) {
-     
-        }, function(error) {
-        
-        console.log(error);
-      });
+      if(message) {
+        $http.post('/comments', {'message' : message, 'url' : $scope.item.url}).then(function(response) {
+          $scope.message = '';
+          }, function(error) {
+          
+          console.log(error);
+        });
+      }
     }
 
     $scope.pressKey = function(event) {
-      if (event.keyCode === 13) { //user hits Enter key
+      if (event.keyCode === 13 && $scope.message) { //user hits Enter key and there's a message
         $scope.chat($scope.message, $scope.url);
+      } else if (event.keyCode === 13) { // user hits Enter and there's no message
+        event.preventDefault();
       }
     }
   

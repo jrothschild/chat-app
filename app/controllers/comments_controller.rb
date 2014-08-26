@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
   def create
     
     Pusher[params[:url].gsub("http://", "")].trigger('my_event', {
-      :message => params[:message]
+      :message => params[:message],
+      :username => current_user.username
     })
 
     current_user.comments.create(:body => params[:message], :url => params[:url])

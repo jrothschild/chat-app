@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def display_url
     @title = "chomment"
-    @url = "#{params[:display]}".gsub("www.", "").gsub("http://", "").gsub("https://", "")
+    @url = "#{params[:display]}".gsub("www.", "").gsub("http://", "").gsub("https://", "").downcase
     @comments = Comment.where(:url => @url)
   end
 

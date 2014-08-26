@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
+  <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body>
 
@@ -24,9 +24,9 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        <%= form_tag('/display_url', method: :post, class: "navbar-form navbar-left", role: "search") do %>
-          <div class="form-group">
-            <%= text_field_tag 'display', nil, placeholder: 'Enter a URL', class: "form-control" %>
+        <%= form_tag('/display_url', method: :post, class: "navbar-form navbar-left", role: "search", id: "url-bar-form") do %>
+          <div class="form-group" id="url-bar-form-group">
+            <%= text_field_tag 'display', nil, placeholder: (@url || 'Enter a URL'), class: "form-control", :id => "url-bar" %>
             <%= submit_tag "Go!",  class: "btn btn-default" %>
           </div>
         <% end %>
