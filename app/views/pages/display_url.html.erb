@@ -5,7 +5,7 @@
 <!-- Chomment Modal -->
   
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-lg bubble">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -57,13 +57,6 @@
 
 <% if user_signed_in?  %>
   <script type="text/javascript">
-    // Enable pusher logging - don't include this in production
-    // Pusher.log = function(message) {
-    //   if (window.console && window.console.log) {
-    //     window.console.log(message);
-    //   }
-    // };
-
     var pusher = new Pusher("<%= ENV['PUSHER_KEY'] %>");
     var channel = pusher.subscribe('<%= @url.gsub("http://", "") %>');
     channel.bind('my_event', function(data) {

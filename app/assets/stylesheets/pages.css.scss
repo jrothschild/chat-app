@@ -94,7 +94,7 @@ body {
 }
 
 #body-callout-text{
-  font-family: 'Rockwell',sans-serif;
+  font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   text-transform: capitalize;
   font-size: 50px;
   text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
@@ -172,6 +172,8 @@ a:visited {
 
 .modal-content {
   position: relative;
+  border: none;
+  border-radius: 0;
 }
 
 #top-url-bar {
@@ -208,4 +210,43 @@ text-align: left;
 
 // SPEECH BUBBLE
 
+.bubble 
+{
+position: relative;
+// width: 405px;
+// height: 120px;
+padding: 0px;
+background: #FFFFFF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: #7F7F7F solid 13px;
+}
 
+.bubble:after 
+{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 15px 0;
+  border-color: #FFFFFF transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -15px;
+  left: 338px;
+}
+
+.bubble:before 
+{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 27px 27px 0;
+  border-color: #7F7F7F transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  bottom: -40px;
+  left: 326px;
+}

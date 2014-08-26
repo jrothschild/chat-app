@@ -32,11 +32,11 @@
 
 .navbar-brand {
   font-size: 30px !important;
-  font-family: Rockwell;
+  font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   color:  white !important;
 }
 
 .devise-formatting {
   margin-left: 30px;
-  font-family: Rockwell;
+  font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 }
