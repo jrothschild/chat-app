@@ -17,7 +17,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
-      <a class="navbar-brand" href="/">chomment</a>
+      <%= link_to(image_tag("logo_white.png", :alt => "logo", :title => "Home"), "/") %>
 
 
     </div>
@@ -32,16 +32,15 @@
         <% end %>
 
 
-      <% if @comments %>
-        <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target=".bs-example-modal-lg" id="navbar-chomment-button">Chomments</button>
-      <% end %>
-   
-
-
 
       <!-- </form> -->
       <ul class="nav navbar-nav navbar-right">
       
+        <% if @comments %>
+          <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target=".bs-example-modal-lg" id="navbar-chomment-button">Chomments</button>
+        <% end %>
+
+
         <% if user_signed_in? %>
 
           <p class="navbar-text"><% if current_user %> Welcome, <%= current_user.username %>!</p>
