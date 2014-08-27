@@ -35,9 +35,15 @@
 
       <!-- </form> -->
       <ul class="nav navbar-nav navbar-right">
-      
+        
         <% if @comments %>
-          <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target=".bs-example-modal-lg" id="navbar-chomment-button">Chomments</button>
+          <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target=".bs-example-modal-lg" id="navbar-chomment-button">Chomments
+            <% if @comments.present? %>
+              <span class="badge"><%= @comments.count %></span>
+            <% end %>
+          </button>
+          
+          
         <% end %>
 
 
